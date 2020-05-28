@@ -133,6 +133,7 @@ spec:
       containers:
         - name: recommendation
           image: boeboe/boutique-recommendationservice:v0.2.0
+          imagePullPolicy: Always
           ports:
             - name: recom-port
               containerPort: 8080
