@@ -557,10 +557,10 @@ spec:
             requests:
               cpu: 70m
               memory: 200Mi
-        volumes:
-          - name: redis-data
-            persistentVolumeClaim:
-              claimName: redis-pvc
+      volumes:
+        - name: redis-data
+          persistentVolumeClaim:
+            claimName: redis-pvc
 ---
 apiVersion: apps/v1
 kind: Deployment
