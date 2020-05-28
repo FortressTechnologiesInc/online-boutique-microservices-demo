@@ -157,8 +157,8 @@ run: ## Run the full demo with docker-compose
 ############################
 
 install_certificate: ## Install the certificate for secure ingress
-	kubectl create secret tls --namespace istio-system boutique-boutique --key ${PRIVATE_KEY_CERT} --cert ${WILDCARD_CERT}
-	# kubectl create secret tls --namespace aspenmesh boutique-boutique --key ${PRIVATE_KEY_CERT} --cert ${WILDCARD_CERT}
+	# kubectl create secret tls --namespace istio-system boutique-boutique --key ${PRIVATE_KEY_CERT} --cert ${WILDCARD_CERT}
+	kubectl create secret tls --namespace aspenmesh boutique-boutique --key ${PRIVATE_KEY_CERT} --cert ${WILDCARD_CERT}
 
 kubernetes_install: ## Install boutique application using kubectl
 		kubectl apply -f ./kubernetes --namespace ${NAMESPACE}
