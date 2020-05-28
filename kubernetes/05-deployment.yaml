@@ -22,7 +22,6 @@ spec:
       containers:
         - name: email
           image: boeboe/boutique-emailservice:v0.2.0
-          imagePullPolicy: IfNotPresent
           ports:
             - name: email-port
               containerPort: 8080
