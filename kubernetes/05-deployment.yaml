@@ -57,6 +57,7 @@ metadata:
     app: checkout
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: checkout
@@ -118,6 +119,7 @@ metadata:
     app: recommendation
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: recommendation
@@ -170,6 +172,7 @@ metadata:
     app: frontend
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -245,6 +248,7 @@ metadata:
     app: payment
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: payment
@@ -287,6 +291,7 @@ metadata:
     app: productcatalog
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: productcatalog
@@ -337,6 +342,7 @@ metadata:
     app: cart
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: cart
@@ -386,10 +392,10 @@ metadata:
     app: loadgenerator
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: loadgenerator
-  replicas: 1
   template:
     metadata:
       labels:
@@ -425,6 +431,7 @@ metadata:
     app: currency
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: currency
@@ -473,6 +480,7 @@ metadata:
     app: shipping
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: shipping
@@ -523,6 +531,7 @@ metadata:
     app: redis
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: redis
@@ -570,6 +579,7 @@ metadata:
     app: ad
     version: v0.2.0
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: ad
