@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: email-deployment
+  name: email
   labels:
     app: email
     version: v0.2.0
@@ -52,7 +52,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: checkout-deployment
+  name: checkout
   labels:
     app: checkout
     version: v0.2.0
@@ -114,7 +114,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: recommendation-deployment
+  name: recommendation
   labels:
     app: recommendation
     version: v0.2.0
@@ -167,7 +167,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: frontend
   labels:
     app: frontend
     version: v0.2.0
@@ -243,7 +243,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payment-deployment
+  name: payment
   labels:
     app: payment
     version: v0.2.0
@@ -286,7 +286,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: productcatalog-deployment
+  name: productcatalog
   labels:
     app: productcatalog
     version: v0.2.0
@@ -337,7 +337,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cart-deployment
+  name: cart
   labels:
     app: cart
     version: v0.2.0
@@ -387,7 +387,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loadgenerator-deployment
+  name: loadgenerator
   labels:
     app: loadgenerator
     version: v0.2.0
@@ -426,7 +426,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: currency-deployment
+  name: currency
   labels:
     app: currency
     version: v0.2.0
@@ -475,7 +475,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shipping-deployment
+  name: shipping
   labels:
     app: shipping
     version: v0.2.0
@@ -526,7 +526,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-deployment
+  name: redis
   labels:
     app: redis
     version: v0.2.0
@@ -574,7 +574,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ad-deployment
+  name: ad
   labels:
     app: ad
     version: v0.2.0
