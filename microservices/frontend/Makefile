@@ -1,7 +1,7 @@
 
 APP_NAME=boutique-frontend
 DOCKER_ACCOUNT=boeboe
-PORT=8080
+PORT=3500
 VERSION=v0.2.0
 
 # HELP

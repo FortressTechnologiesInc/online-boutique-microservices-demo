@@ -1,7 +1,7 @@
 
 APP_NAME=boutique-recommendationservice
 DOCKER_ACCOUNT=boeboe
-PORT=8080
+PORT=3900
 VERSION=v0.2.0
 
 # HELP

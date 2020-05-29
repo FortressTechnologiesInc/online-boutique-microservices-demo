@@ -64,7 +64,7 @@ public final class AdService {
   private static final AdService service = new AdService();
 
   private void start() throws IOException {
-    int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "9555"));
+    int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "3000"));
     healthMgr = new HealthStatusManager();
 
     server =

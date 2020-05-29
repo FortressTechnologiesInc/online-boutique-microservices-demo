@@ -1,7 +1,7 @@
 
 APP_NAME=boutique-paymentservice
 DOCKER_ACCOUNT=boeboe
-PORT=50051
+PORT=3700
 VERSION=v0.2.0
 
 # HELP

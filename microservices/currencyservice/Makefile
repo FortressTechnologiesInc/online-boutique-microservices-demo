@@ -1,7 +1,7 @@
 
 APP_NAME=boutique-currencyservice
 DOCKER_ACCOUNT=boeboe
-PORT=7000
+PORT=3300
 VERSION=v0.2.0
 
 # HELP

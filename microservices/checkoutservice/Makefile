@@ -1,7 +1,7 @@
 
 APP_NAME=boutique-checkoutservice
 DOCKER_ACCOUNT=boeboe
-PORT=5050
+PORT=3200
 VERSION=v0.2.0
 
 # HELP

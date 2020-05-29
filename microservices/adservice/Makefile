@@ -1,6 +1,6 @@
 APP_NAME=boutique-adservice
 DOCKER_ACCOUNT=boeboe
-PORT=9555
+PORT=3000
 VERSION=v0.2.0
 
 # HELP

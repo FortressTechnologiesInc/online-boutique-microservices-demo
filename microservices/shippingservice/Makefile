@@ -1,7 +1,7 @@
 
 APP_NAME=boutique-shippingservice
 DOCKER_ACCOUNT=boeboe
-PORT=50051
+PORT=4000
 VERSION=v0.2.0
 
 # HELP

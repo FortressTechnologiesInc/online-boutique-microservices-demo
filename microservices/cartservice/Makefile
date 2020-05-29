@@ -1,7 +1,7 @@
 
 APP_NAME=boutique-cartservice
 DOCKER_ACCOUNT=boeboe
-PORT=7070
+PORT=3100
 VERSION=v0.2.0
 
 # HELP

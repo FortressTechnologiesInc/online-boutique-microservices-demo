@@ -124,8 +124,8 @@ namespace cartservice
                                 string portStr = Environment.GetEnvironmentVariable(CART_SERVICE_PORT);
                                 if (string.IsNullOrEmpty(portStr))
                                 {
-                                    Console.WriteLine($"{CART_SERVICE_PORT} environment variable was not set. Setting the port to 8080");
-                                    port = 8080;
+                                    Console.WriteLine($"{CART_SERVICE_PORT} environment variable was not set. Setting the port to 3100");
+                                    port = 3100;
                                 }
                                 else
                                 {

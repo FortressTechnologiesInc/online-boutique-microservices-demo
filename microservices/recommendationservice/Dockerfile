@@ -19,7 +19,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # set listen port
-ENV PORT "8080"
-EXPOSE 8080
+ENV PORT "3900"
+EXPOSE 3900
 
 ENTRYPOINT ["python", "/recommendationservice/recommendation_server.py"]

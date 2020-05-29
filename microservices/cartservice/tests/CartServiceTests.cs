@@ -24,7 +24,7 @@ namespace cartservice
     public class E2ETests
     {
         private static string serverHostName = "localhost";
-        private static int port = 7070;
+        private static int port = 3100;
 
         [Fact]
         public async Task GetItem_NoAddItemBefore_EmptyCartReturned()

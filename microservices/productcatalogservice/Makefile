@@ -1,7 +1,7 @@
 
 APP_NAME=boutique-productcatalogservice
 DOCKER_ACCOUNT=boeboe
-PORT=3550
+PORT=3800
 VERSION=v0.2.0
 
 # HELP
