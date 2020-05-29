@@ -24,10 +24,10 @@ spec:
           image: boeboe/boutique-emailservice:v0.2.0
           ports:
             - name: email-port
-              containerPort: 8080
+              containerPort: 3400
           env:
             - name: PORT
-              value: "8080"
+              value: 3400
             - name: DISABLE_TRACING
               value: "1"
             - name: DISABLE_PROFILER
@@ -35,11 +35,11 @@ spec:
           readinessProbe:
             periodSeconds: 5
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:8080"]
+              command: ["/bin/grpc_health_probe", "-addr=:3400"]
           livenessProbe:
             periodSeconds: 5
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:8080"]
+              command: ["/bin/grpc_health_probe", "-addr=:3400"]
           resources:
             requests:
               cpu: 100m
@@ -72,28 +72,28 @@ spec:
           image: boeboe/boutique-checkoutservice:v0.2.0
           ports:
             - name: checkout-port
-              containerPort: 5050
+              containerPort: 3200
           readinessProbe:
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:5050"]
+              command: ["/bin/grpc_health_probe", "-addr=:3200"]
           livenessProbe:
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:5050"]
+              command: ["/bin/grpc_health_probe", "-addr=:3200"]
           env:
             - name: PORT
-              value: "5050"
+              value: 3200
             - name: PRODUCT_CATALOG_SERVICE_ADDR
-              value: "productcatalog:3550"
+              value: "productcatalog:3800"
             - name: SHIPPING_SERVICE_ADDR
-              value: "shipping:50051"
+              value: "shipping:4000"
             - name: PAYMENT_SERVICE_ADDR
-              value: "payment:50051"
+              value: "payment:3700"
             - name: EMAIL_SERVICE_ADDR
-              value: "email:5000"
+              value: "email:3400"
             - name: CURRENCY_SERVICE_ADDR
-              value: "currency:7000"
+              value: "currency:3300"
             - name: CART_SERVICE_ADDR
-              value: "cart:7070"
+              value: "cart:3100"
             - name: DISABLE_STATS
               value: "1"
             - name: DISABLE_TRACING
@@ -135,20 +135,20 @@ spec:
           image: boeboe/boutique-recommendationservice:v0.2.0
           ports:
             - name: recom-port
-              containerPort: 8080
+              containerPort: 3900
           readinessProbe:
             periodSeconds: 5
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:8080"]
+              command: ["/bin/grpc_health_probe", "-addr=:3900"]
           livenessProbe:
             periodSeconds: 5
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:8080"]
+              command: ["/bin/grpc_health_probe", "-addr=:3900"]
           env:
             - name: PORT
-              value: "8080"
+              value: 3900
             - name: PRODUCT_CATALOG_SERVICE_ADDR
-              value: "productcatalog:3550"
+              value: "productcatalog:3800"
             - name: DISABLE_TRACING
               value: "1"
             - name: DISABLE_PROFILER
@@ -189,12 +189,12 @@ spec:
           image: boeboe/boutique-frontend:v0.2.0
           ports:
             - name: frontend-port
-              containerPort: 8080
+              containerPort: 3500
           readinessProbe:
             initialDelaySeconds: 10
             httpGet:
               path: "/_healthz"
-              port: 8080
+              port: 3500
               httpHeaders:
                 - name: "Cookie"
                   value: "shop_session-id=x-readiness-probe"
@@ -202,29 +202,29 @@ spec:
             initialDelaySeconds: 10
             httpGet:
               path: "/_healthz"
-              port: 8080
+              port: 3500
               httpHeaders:
                 - name: "Cookie"
                   value: "shop_session-id=x-liveness-probe"
           env:
             - name: PORT
-              value: "8080"
+              value: 3500
             - name: LISTEN_ADDR
               value: "0.0.0.0"
             - name: PRODUCT_CATALOG_SERVICE_ADDR
-              value: "productcatalog:3550"
+              value: "productcatalog:3800"
             - name: CURRENCY_SERVICE_ADDR
-              value: "currency:7000"
+              value: "currency:3300"
             - name: CART_SERVICE_ADDR
-              value: "cart:7070"
+              value: "cart:3100"
             - name: RECOMMENDATION_SERVICE_ADDR
-              value: "recommendation:8080"
+              value: "recommendation:3900"
             - name: SHIPPING_SERVICE_ADDR
-              value: "shipping:50051"
+              value: "shipping:4000"
             - name: CHECKOUT_SERVICE_ADDR
-              value: "checkout:5050"
+              value: "checkout:3200"
             - name: AD_SERVICE_ADDR
-              value: "ad:9555"
+              value: "ad:3000"
             - name: ENV_PLATFORM
               value: "onprem"
             - name: DISABLE_TRACING
@@ -266,16 +266,16 @@ spec:
           image: boeboe/boutique-paymentservice:v0.2.0
           ports:
             - name: payment-port
-              containerPort: 50051
+              containerPort: 3700
           env:
             - name: PORT
-              value: "50051"
+              value: 3700
           readinessProbe:
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:50051"]
+              command: ["/bin/grpc_health_probe", "-addr=:3700"]
           livenessProbe:
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:50051"]
+              command: ["/bin/grpc_health_probe", "-addr=:3700"]
           resources:
             requests:
               cpu: 100m
@@ -309,10 +309,10 @@ spec:
           image: boeboe/boutique-productcatalogservice:v0.2.0
           ports:
             - name: product-port
-              containerPort: 3550
+              containerPort: 3800
           env:
             - name: PORT
-              value: "3550"
+              value: 3800
             - name: DISABLE_STATS
               value: "1"
             - name: DISABLE_TRACING
@@ -323,10 +323,10 @@ spec:
             #   value: "jaeger-collector:14268"
           readinessProbe:
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:3550"]
+              command: ["/bin/grpc_health_probe", "-addr=:3800"]
           livenessProbe:
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:3550"]
+              command: ["/bin/grpc_health_probe", "-addr=:3800"]
           resources:
             requests:
               cpu: 100m
@@ -360,12 +360,12 @@ spec:
           image: boeboe/boutique-cartservice:v0.2.0
           ports:
             - name: cart-port
-              containerPort: 7070
+              containerPort: 3100
           env:
+            - name: PORT
+              value: 3100
             - name: REDIS_ADDR
               value: "redis:6379"
-            - name: PORT
-              value: "7070"
             - name: LISTEN_ADDR
               value: "0.0.0.0"
           resources:
@@ -378,12 +378,12 @@ spec:
           readinessProbe:
             initialDelaySeconds: 15
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:7070", "-rpc-timeout=5s"]
+              command: ["/bin/grpc_health_probe", "-addr=:3100", "-rpc-timeout=5s"]
           livenessProbe:
             initialDelaySeconds: 15
             periodSeconds: 10
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:7070", "-rpc-timeout=5s"]
+              command: ["/bin/grpc_health_probe", "-addr=:3100", "-rpc-timeout=5s"]
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -413,7 +413,7 @@ spec:
           image: boeboe/boutique-loadgenerator:v0.2.0
           env:
             - name: FRONTEND_ADDR
-              value: "frontend:80"
+              value: "frontend:3500"
             - name: USERS
               value: "10"
           resources:
@@ -449,10 +449,10 @@ spec:
           image: boeboe/boutique-currencyservice:v0.2.0
           ports:
             - name: currency-port
-              containerPort: 7000
+              containerPort: 3300
           env:
             - name: PORT
-              value: "7000"
+              value: 3300
             - name: DISABLE_TRACING
               value: "1"
             - name: DISABLE_PROFILER
@@ -461,10 +461,10 @@ spec:
               value: "1"
           readinessProbe:
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:7000"]
+              command: ["/bin/grpc_health_probe", "-addr=:3300"]
           livenessProbe:
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:7000"]
+              command: ["/bin/grpc_health_probe", "-addr=:3300"]
           resources:
             requests:
               cpu: 100m
@@ -497,10 +497,10 @@ spec:
           image: boeboe/boutique-shippingservice:v0.2.0
           ports:
             - name: shipping-port
-              containerPort: 50051
+              containerPort: 4000
           env:
             - name: PORT
-              value: "50051"
+              value: 4000
             - name: DISABLE_STATS
               value: "1"
             - name: DISABLE_TRACING
@@ -512,10 +512,10 @@ spec:
           readinessProbe:
             periodSeconds: 5
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:50051"]
+              command: ["/bin/grpc_health_probe", "-addr=:4000"]
           livenessProbe:
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:50051"]
+              command: ["/bin/grpc_health_probe", "-addr=:4000"]
           resources:
             requests:
               cpu: 100m
@@ -597,10 +597,10 @@ spec:
           image: boeboe/boutique-adservice:v0.2.0
           ports:
             - name: ad-port
-              containerPort: 9555
+              containerPort: 3000
           env:
             - name: PORT
-              value: "9555"
+              value: 3000
             - name: DISABLE_STATS
               value: "1"
             - name: DISABLE_TRACING
@@ -618,10 +618,10 @@ spec:
             initialDelaySeconds: 20
             periodSeconds: 15
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:9555"]
+              command: ["/bin/grpc_health_probe", "-addr=:3000"]
           livenessProbe:
             initialDelaySeconds: 20
             periodSeconds: 15
             exec:
-              command: ["/bin/grpc_health_probe", "-addr=:9555"]
+              command: ["/bin/grpc_health_probe", "-addr=:3000"]
 ---

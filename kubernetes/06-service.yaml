@@ -11,7 +11,7 @@ spec:
     app: email
   ports:
     - name: grpc-email
-      port: 5000
+      port: 3400
       targetPort: email-port
 ---
 apiVersion: v1
@@ -26,7 +26,7 @@ spec:
     app: checkout
   ports:
   - name: grpc-checkout
-    port: 5050
+    port: 3200
     targetPort: checkout-port
 ---
 apiVersion: v1
@@ -41,7 +41,7 @@ spec:
     app: recommendation
   ports:
   - name: grpc-recommendation
-    port: 8080
+    port: 3900
     targetPort: recom-port
 ---
 apiVersion: v1
@@ -56,7 +56,7 @@ spec:
     app: frontend
   ports:
   - name: http-frontend
-    port: 80
+    port: 3500
     targetPort: frontend-port
 ---
 apiVersion: v1
@@ -71,7 +71,7 @@ spec:
     app: payment
   ports:
   - name: grpc-payment
-    port: 50051
+    port: 3700
     targetPort: payment-port
 ---
 apiVersion: v1
@@ -86,7 +86,7 @@ spec:
     app: productcatalog
   ports:
   - name: grpc-productcatalog
-    port: 3550
+    port: 3800
     targetPort: product-port
 ---
 apiVersion: v1
@@ -101,7 +101,7 @@ spec:
     app: cart
   ports:
   - name: grpc-cart
-    port: 7070
+    port: 3100
     targetPort: cart-port
 ---
 apiVersion: v1
@@ -116,7 +116,7 @@ spec:
     app: currency
   ports:
   - name: grpc-currency
-    port: 7000
+    port: 3300
     targetPort: currency-port
 ---
 apiVersion: v1
@@ -131,7 +131,7 @@ spec:
     app: shipping
   ports:
   - name: grpc-shipping
-    port: 50051
+    port: 4000
     targetPort: shipping-port
 ---
 apiVersion: v1
@@ -161,5 +161,5 @@ spec:
     app: ad
   ports:
   - name: grpc-ad
-    port: 9555
+    port: 3000
     targetPort: ad-port
