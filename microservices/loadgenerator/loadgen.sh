@@ -24,12 +24,14 @@ fi
 
 set -x
 
-# if one request to the frontend fails, then exit
+# if one request to the frontend fails, then loop wait 10 seconds
 STATUSCODE=$(curl --silent --output /dev/stderr --write-out "%{http_code}" http://${FRONTEND_ADDR})
-if test $STATUSCODE -ne 200; then
+while test $STATUSCODE -ne 200; do
     echo "Error: Could not reach frontend - Status code: ${STATUSCODE}"
-    exit 1
-fi
+    echo "Waiting 10 seconds"
+    sleep 10
+    STATUSCODE=$(curl --silent --output /dev/stderr --write-out "%{http_code}" http://${FRONTEND_ADDR})
+done
 
 # else, run loadgen
 locust --host="http://${FRONTEND_ADDR}" --no-web -c "${USERS:-10}" 2>&1

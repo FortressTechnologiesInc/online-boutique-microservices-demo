@@ -27,7 +27,7 @@ spec:
               containerPort: 3400
           env:
             - name: PORT
-              value: 3400
+              value: "3400"
             - name: DISABLE_TRACING
               value: "1"
             - name: DISABLE_PROFILER
@@ -81,7 +81,7 @@ spec:
               command: ["/bin/grpc_health_probe", "-addr=:3200"]
           env:
             - name: PORT
-              value: 3200
+              value: "3200"
             - name: PRODUCT_CATALOG_SERVICE_ADDR
               value: productcatalog:3800
             - name: SHIPPING_SERVICE_ADDR
@@ -146,7 +146,7 @@ spec:
               command: ["/bin/grpc_health_probe", "-addr=:3900"]
           env:
             - name: PORT
-              value: 3900
+              value: "3900"
             - name: PRODUCT_CATALOG_SERVICE_ADDR
               value: productcatalog:3800
             - name: DISABLE_TRACING
@@ -208,9 +208,9 @@ spec:
                   value: "shop_session-id=x-liveness-probe"
           env:
             - name: PORT
-              value: 3500
+              value: "3500"
             - name: LISTEN_ADDR
-              value: 0.0.0.0
+              value: "0.0.0.0"
             - name: PRODUCT_CATALOG_SERVICE_ADDR
               value: productcatalog:3800
             - name: CURRENCY_SERVICE_ADDR
@@ -269,7 +269,7 @@ spec:
               containerPort: 3700
           env:
             - name: PORT
-              value: 3700
+              value: "3700"
           readinessProbe:
             exec:
               command: ["/bin/grpc_health_probe", "-addr=:3700"]
@@ -312,7 +312,7 @@ spec:
               containerPort: 3800
           env:
             - name: PORT
-              value: 3800
+              value: "3800"
             - name: DISABLE_STATS
               value: "1"
             - name: DISABLE_TRACING
@@ -363,11 +363,11 @@ spec:
               containerPort: 3100
           env:
             - name: PORT
-              value: 3100
+              value: "3100"
             - name: REDIS_ADDR
               value: redis:6379
             - name: LISTEN_ADDR
-              value: 0.0.0.0
+              value: "0.0.0.0"
           resources:
             requests:
               cpu: 200m
@@ -415,7 +415,7 @@ spec:
             - name: FRONTEND_ADDR
               value: frontend:3500
             - name: USERS
-              value: "10"
+              value: 10
           resources:
             requests:
               cpu: 300m
@@ -452,7 +452,7 @@ spec:
               containerPort: 3300
           env:
             - name: PORT
-              value: 3300
+              value: "3300"
             - name: DISABLE_TRACING
               value: "1"
             - name: DISABLE_PROFILER
@@ -500,7 +500,7 @@ spec:
               containerPort: 4000
           env:
             - name: PORT
-              value: 4000
+              value: "4000"
             - name: DISABLE_STATS
               value: "1"
             - name: DISABLE_TRACING
@@ -600,7 +600,7 @@ spec:
               containerPort: 3000
           env:
             - name: PORT
-              value: 3000
+              value: "3000"
             - name: DISABLE_STATS
               value: "1"
             - name: DISABLE_TRACING
