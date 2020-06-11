@@ -5,7 +5,7 @@ metadata:
 spec:
   inbound:
     ports:
-      - number: 80
+      - number: 3500
         protocol: HTTP
         paths:
           - expose:
