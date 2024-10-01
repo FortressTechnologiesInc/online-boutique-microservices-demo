@@ -1,4 +1,5 @@
-FROM microsoft/dotnet:2.1-sdk-alpine as builder
+FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine as builder
+
 WORKDIR /app
 COPY . .
 RUN dotnet restore && \
